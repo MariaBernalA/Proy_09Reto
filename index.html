@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clases</title>
+</head>
+<body>
+  <script>
+
+    console.log()
+    console.log('RETO 1')
+    console.log()
+
+    class Persona {
+        #documento;
+        #nombreCompleto;
+    
+  constructor (){
+    this.#documento = '';
+    this.#nombreCompleto = '';
+  }
+
+  set setDocumento(value){
+    this.#documento = value;
+  }
+
+  get getDocumento(){
+    return this.#documento;
+  }
+
+  set setNombreCompleto(value){
+    this.#nombreCompleto = value;
+  }
+
+  get getNombreCompleto(){
+    return this.#nombreCompleto;
+  }
+
+  informacion(){
+    console.log(`Hola mi nombre es  ` + this.#nombreCompleto +
+                ` y mi documento es` + this.#documento);
+  }
+}
+
+class Aprendiz extends Persona{
+    #ficha;
+    #programa;
+
+constructor(){
+    super();
+    this.#ficha = '';
+    this.#programa = '';
+}
+
+   set setFicha(value){
+    this.#ficha = value;
+   }
+
+   get getFicha (){
+    return this.#ficha;
+   }
+
+   set setPrograma(value){
+    this.#programa = value;
+   }
+
+   get getPrograma (){
+    return this.#programa;
+   }
+
+  matricula(){
+    console.log(`Estoy en la ficha  ` + this.getFicha +
+                 ` del programa ` + this.getPrograma);
+   }
+}
+
+class EtapaLectiva extends Aprendiz{
+    #numeroTrimestre;
+    #fechaInicio;
+    #fechaTerminacion;
+
+    constructor(){
+        super();
+        this.#numeroTrimestre = '';
+        this.#fechaInicio = '';
+        this.#fechaTerminacion = '';
+    }
+
+    set setNumeroTrimestre(value){
+        this.#numeroTrimestre = value;
+    }
+
+    get getNumeroTrimestre(){
+        return this.#numeroTrimestre;
+    }
+
+    set setFechaInicio(value){
+        this.#fechaInicio = value;
+    }
+
+    get getFechaInicio(){
+        return this.#fechaInicio;
+    }
+
+    set setFechaTerminacion(value){
+        this.#fechaTerminacion = value;
+    }
+
+    get getFechaTerminacion(){
+        return this.#fechaTerminacion;
+    }
+
+    informacioon(){
+        console.log(`estoy en el trimestre ` + this.getNumeroTrimestre +
+                     ` en mi etapa de aprendizaje `);
+    }
+
+    estado(){
+        console.log(`con fecha de ` + this.getFechaInicio + 
+                     ` y con fecha de terminacion ` + this.getFechaTerminacion);
+    }
+}
+
+class EtapaPractica extends Aprendiz{
+    #modalidad;
+    #fechaInicio;
+    #fechaTerminacion;
+
+    constructor(){
+        super();
+        this.#modalidad = '';
+        this.#fechaInicio = '';
+        this.#fechaTerminacion = '';
+    }
+
+    set setModalidad(value){
+        this.#modalidad = value;
+    }
+
+    get getModalidad(){
+        return this.#modalidad;
+    }
+
+    set setFechaInicio(value){
+        this.#fechaInicio = value;
+    }
+
+    get getFechaInicio(){
+        return this.#fechaInicio;
+    }
+
+    set setFechaTerminacion(value){
+        this.#fechaTerminacion = value;
+    }
+
+    get getFechaTerminacion(){
+        return this.#fechaTerminacion;
+    }
+
+    iinformacion(){
+        console.log(` Estoy en la modalidad ` + this.getModalidad);
+    }
+    
+    estaado(){
+        console.log(`con fecha de inicio ` + this.getFechaInicio + 
+                    `y con fecha de terminacion ` + this.getFechaTerminacion);
+    }
+}
+
+class Instructor extends Persona{
+    #profesion;
+    #salarioBasico;
+
+    constructor(){
+        super();
+        this.#profesion = '';
+        this.#salarioBasico = 0;
+    }
+
+    set setProfesion (value){
+        this.#profesion = value;
+    }
+
+    get getProfesion (){
+        return this.#profesion;
+    }
+
+    set setSalarioBasico (value){
+        this.#salarioBasico = value;
+    }
+
+    get getSalarioBasico (){
+        return this.#salarioBasico;
+    }
+
+    contrato(){
+        console.log(`Mi profesion es ` + this.getProfesion +
+                     ` y mi salario basico es de` + this.getSalarioBasico);
+    }
+}
+
+class InstructorPlanta extends Instructor{
+    #grado;
+    #fechaVinculacion;
+
+    constructor(){
+        super();
+        this.#grado = 0 ;
+        this.#fechaVinculacion = '';
+    }
+
+    set setGrado(value){
+        this.#grado = value;
+    }
+
+    get getGrado(){
+        return this.#grado;
+    }
+
+    set setFechaVinculacion(value){
+        this.#fechaVinculacion = value;
+    }
+
+    get getFechaVinculacion(){
+        return this.#fechaVinculacion;
+    }
+
+    informaciion(){
+        console.log(`Mi nombre es  ` + this.getNombreCompleto + 
+                   ` y mi documento es ` + this.getDocumento);
+    }
+
+    estado(){
+        console.log(`Con fecha de vinculacion de ` + this.getFechaVinculacion);
+    }
+    sueldo(){
+        console.log(`Tengo el grado ` + this.getGrado + 
+                     ` y con un sueldo de ` + this.getSalarioBasico );
+    }
+}
+
+class InstructorContrato extends Instructor{
+    #duracionContrato;
+    #fechaVinculacion;
+
+    constructor(){
+        super();
+        this.#duracionContrato = 0 ;
+        this.#fechaVinculacion = '';
+    }
+
+    set setDuracionContrato(value){
+        this.#duracionContrato = value;
+    }
+
+    get getDuracionContrato(){
+        return this.#duracionContrato;
+    }
+
+    set setFechaVinculacion(value){
+        this.#fechaVinculacion = value;
+    }
+
+    get getFechaVinculacion(){
+        return this.#fechaVinculacion;
+    }
+
+    informacion(){
+        console.log(`Mi nombre es  ` + this.getNombreCompleto + 
+                   ` y mi documento es ` + this.getDocumento);
+    }
+    estaado(){
+        console.log(`Tengo una duracion de contrato de ` + this.getDuracionContrato +
+                     ` con una fecha de vinculacion de ` + this.getFechaVinculacion);
+    }
+    sueldoo(){
+        console.log(`Tengo un sueldo de ` + this.getSalarioBasico );
+    }
+}
+const aprendiz1 = new Aprendiz;
+
+console.log()
+console.log(`Aprendiz`)
+console.log()
+
+aprendiz1.setNombreCompleto = 'Juana Martinez';
+aprendiz1.setDocumento = ' 207456787';
+aprendiz1.setFicha = '2798618';
+aprendiz1.setPrograma = 'ADSO';
+
+aprendiz1.informacion();
+aprendiz1.matricula();
+
+
+
+const aprendiz2 = new EtapaLectiva;
+
+console.log()
+console.log('Aprendiz etapa lectiva')
+console.log()
+
+aprendiz2.setNombreCompleto = 'Davis Moreno';
+aprendiz2.setDocumento = ' 2074567887';
+aprendiz2.setFicha = '2798658';
+aprendiz2.setPrograma = 'Administracion';
+aprendiz2.setNumeroTrimestre = '4';
+aprendiz2.setFechaInicio = '10-06-2023';
+aprendiz2.setFechaTerminacion = '10-10-2025';
+
+aprendiz2.informacion();
+aprendiz2.matricula();
+aprendiz2.estado();
+aprendiz2.informacioon();
+
+
+
+const aprendiz3 = new EtapaPractica;
+
+console.log()
+console.log('Aprendiz etapa practica')
+console.log()
+
+aprendiz3.setNombreCompleto = 'Carlos Matiz';
+aprendiz3.setDocumento = ' 1456373287';
+aprendiz3.setFicha = '26567438';
+aprendiz3.setPrograma = 'Cocina';
+aprendiz3.setNumeroTrimestre = '2';
+aprendiz3.setFechaInicio = '10-06-2022';
+aprendiz3.setFechaTerminacion = '10-06-2023';
+aprendiz3.setModalidad = ' presencial';
+
+aprendiz3.informacion();
+aprendiz3.matricula();
+aprendiz3.estaado();
+aprendiz3.iinformacion();
+
+
+const instructor = new Instructor;
+
+console.log()
+console.log('Instructor')
+console.log()
+
+instructor.setNombreCompleto = 'Sebastian Cortez';
+instructor.setDocumento = '20745689';
+instructor.setProfesion = 'Instructor';
+instructor.setSalarioBasico = '1.500.000 ';
+
+instructor.informacion();
+instructor.contrato();
+
+
+const instructor1 = new InstructorPlanta;
+
+console.log()
+console.log('Instructor Planta')
+console.log()
+
+instructor1.setNombreCompleto = 'Andrea Cajamarca';
+instructor1.setDocumento = '20743289';
+instructor1.setProfesion = 'Instructora';
+instructor1.setSalarioBasico = 1200000 ;
+instructor1.setGrado = 12;
+instructor1.setFechaVinculacion = '13-08-2022';
+
+instructor1.informaciion();
+instructor1.estado();
+instructor1.sueldo();
+
+const instructor2 = new InstructorContrato;
+
+console.log()
+console.log('Instructor Contrato')
+console.log()
+
+instructor2.setNombreCompleto = 'Sebastian Martinez';
+instructor2.setDocumento = '39773245';
+instructor2.setProfesion = 'instructor';
+instructor2.setSalarioBasico = 1400000;
+instructor2.setDuracionContrato = '2 años';
+instructor2.setFechaVinculacion = '16-09-2022';
+
+instructor2.informacion();
+instructor2.estaado();
+instructor2.sueldoo();
+
+
+console.log()
+console.log('RETO 2')
+console.log()
+
+class Producto {
+    #codigo;
+    #titulo;
+    #autor;
+
+    constructor (){
+        this.#codigo = '';
+        this.#titulo = '';
+        this.#autor = '';
+    }
+
+    set setCodigo(value){
+        this.#codigo = value;
+    }
+
+    get getCodigo(){
+        return this.#codigo;
+    }
+
+    set setTitulo(value){
+        this.#titulo = value;
+    }
+
+    get getTitulo(){
+        return this.#titulo;
+    }
+
+    set setAutor(value){
+        this.#autor = value;
+    }
+
+    get getAutor(){
+        return this.#autor;
+    }
+
+    informacion(){
+        console.log(`El codigo del producto es ` + this.getCodigo +
+                    ` su titulo es ` + this.#titulo + ` y el autor es ` + this.#autor);
+    }
+}
+
+   class ProductoImpreso extends Producto{
+    #editorial;
+    #año;
+    #precio;
+
+    constructor(){
+        super();
+        this.#editorial = '';
+        this.#año = '';
+        this.#precio = 0;
+    }
+
+    set setEditorial(value){
+        this.#editorial = value;
+    }
+
+    get getEditorial(){
+        return this.#editorial;
+    }
+
+    set setYear(value){
+        this.#año = value;
+    }
+
+    get getYear(){
+        return this.#año;
+    }
+
+    set setPrecio(value){
+        this.#precio = value;
+    }
+
+    get getPrecio(){
+        return this.#precio;
+    }
+
+    informacion1(){
+        console.log(`La editorial de este producto es ` + this.getEditorial +
+                    ` ,el año en que se publico fue en el ` + this.getYear +
+                    ` y el precio es de ` + this.getPrecio);
+    }
+
+   }
+
+   class Revista extends ProductoImpreso{
+    #volumen;
+
+    constructor(){
+        super();
+        this.#volumen = '';
+    }
+
+    set setVolumen(value){
+        this.#volumen = value;
+    }
+
+    get getVolumen(){
+        return this.#volumen;
+    }
+
+    informacion1(){
+        console.log(`La editorial de esta revista es ` + this.getEditorial +
+                    ` ,el año en que se publico fue ` + this.getYear +
+                    ` y el precio es de ` + this.getPrecio);
+    }
+    estado1(){
+        console.log(`Esta revista es el ` + this.getVolumen);
+    }
+
+   }
+
+   class Libro extends ProductoImpreso{
+    #idioma;
+
+    constructor(){
+        super();
+        this.#idioma = '';
+    }
+
+    set setIdioma(value){
+        this.#idioma = value;
+    }
+
+    get getIdioma(){
+        return this.#idioma;
+    }
+
+    informacion1(){
+        console.log(`La editorial de este libro es ` + this.getEditorial +
+                    ` ,el año en que se publico fue ` + this.getYear +
+                    ` y el precio es de ` + this.getPrecio);
+    }
+    estado2(){
+        console.log(`Este libro se encuentra en el idioma ` + this.getIdioma);
+    }
+
+   }
+
+   class ProductoGrabado extends Producto{
+    #tiempoDuracion;
+    #medioTecnologico;
+
+    constructor(){
+        super();
+        this.#tiempoDuracion = 0;
+        this.#medioTecnologico = '';
+    }
+
+    set setTiempoDuracion(value){
+        this.#tiempoDuracion = value;
+    }
+
+    get getTiempoDuracion(){
+       return  this.#tiempoDuracion;
+    }
+
+    set setMedioTecnologico(value){
+        this.#medioTecnologico = value;
+    }
+
+    get getMedioTecnologico(){
+        return this.#medioTecnologico;
+    }
+
+    informacion2(){
+        console.log(`El tiempo de duracion del producto es de ` + this.getTiempoDuracion +
+                   ` minutos` + ` y su medio tecnologico es ` + this.getMedioTecnologico );
+    }
+
+   }
+
+   class ProductoSoftware extends Producto{
+    #version;
+    #sistemaOperativo;
+
+    constructor(){
+        super();
+        this.#version = '';
+        this.#sistemaOperativo = 0;
+    }
+
+    set setVersion(value){
+        this.#version = value;
+    }
+
+    get getVersion(){
+        return this.#version;
+    }
+
+    set setSistemaOperativo(value){
+        this.#sistemaOperativo = value;
+    }
+
+    get getSistemaOperativo(){
+        return this.#sistemaOperativo;
+    }
+
+    informacion3(){
+        console.log(`la version de este producto es ` + this.getVersion +
+                    ` y su sistema operativo es ` + this.getSistemaOperativo);
+    }
+   }
+
+   const productoI1 = new ProductoImpreso;
+
+   console.log();
+   console.log(`Producto impreso`)
+   console.log();
+
+   productoI1.setCodigo = '#090909';
+   productoI1.setTitulo = 'El elixir';
+   productoI1.setAutor = 'Valencio Suarez';
+   productoI1.setEditorial = 'Altea';
+   productoI1.setYear = '2019';
+   productoI1.setPrecio = 60000;
+
+   productoI1.informacion();
+   productoI1.informacion1();
+
+   const productoI2= new Revista;
+
+   console.log();
+   console.log(`Revista`)
+   console.log();
+
+   productoI2.setCodigo = '#0808786';
+   productoI2.setTitulo = 'La moda actual';
+   productoI2.setAutor = 'Monica Valle';
+   productoI2.setEditorial = 'Araca';
+   productoI2.setYear = '2023';
+   productoI2.setPrecio = 50000;
+   productoI2.setVolumen = 'volumen 4';
+
+   productoI2.informacion();
+   productoI2.informacion1();
+   productoI2.estado1();
+
+   const productoI3 = new Libro;
+
+   console.log();
+   console.log(`Libro`)
+   console.log();
+
+   productoI3.setCodigo = '#65786';
+   productoI3.setTitulo = 'La purga ';
+   productoI3.setAutor = 'Martin Rincon';
+   productoI3.setEditorial = 'Españolz';
+   productoI3.setYear = '2020';
+   productoI3.setPrecio = 45000;
+   productoI3.setIdioma = 'ingles';
+
+   productoI3.informacion();
+   productoI3.informacion1();
+   productoI3.estado2();
+
+   const productoG = new ProductoGrabado;
+
+   console.log();
+   console.log(`Producto Grabado`)
+   console.log();
+
+   productoG.setCodigo = '#4536';
+   productoG.setTitulo = 'Las mil voces ';
+   productoG.setAutor = 'David Melcon';
+   productoG.setEditorial = 'EditorialesAr';
+   productoG.setYear = '2022';
+   productoG.setPrecio = 30000;
+   productoG.setTiempoDuracion = 20;
+   productoG.setMedioTecnologico = 'mp3';
+
+   productoG.informacion();
+   productoG.informacion2();
+
+   const productoS = new ProductoSoftware;
+
+   console.log();
+   console.log(`Producto Software`)
+   console.log();
+
+   productoS.setCodigo = '#3232';
+   productoS.setTitulo = 'Los codigos faciles ';
+   productoS.setAutor = 'Oscar wilde';
+   productoS.setEditorial = 'SoftwareR';
+   productoS.setYear = '2023';
+   productoS.setPrecio = 790000;
+   productoS.setVersion = 'mozilla firefox';
+   productoS.setSistemaOperativo = 14.0;
+
+   productoS.informacion();
+   productoS.informacion3();
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
